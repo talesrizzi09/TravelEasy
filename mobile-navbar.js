@@ -52,3 +52,28 @@ function rotateBanner() {
 }
 
 setInterval(rotateBanner, 5000); // Trocar a imagem a cada 5 segundos
+/*botão lua e sol*/
+const chk = document.getElementById('chk');
+const body = document.body;
+const header = document.querySelector('.header');
+const footer = document.querySelector('.footer');
+
+chk.addEventListener('change', () => {
+  body.classList.toggle('dark');
+  header.classList.toggle('dark');
+  footer.classList.toggle('dark');
+
+  // Verifica se o modo escuro está ativado
+  if (body.classList.contains('dark')) {
+    // Aplica estilos para letras brancas
+    body.style.color = '#fff';
+    header.style.color = '#fff';
+    footer.style.color = '#fff';
+  } else {
+    // Volta para estilos originais
+    body.style.color = ''; // Define para vazio para remover a propriedade de estilo
+    header.style.color = '';
+    footer.style.color = '';
+  }
+});
+
